@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+    	<title>CMS Courses Page</title>
+    </head>
+    <body>
+		<h3><p th:text="'List of Courses in ' + ${deg.name}" /></h3>
+		<hr>
+		<a th:href="@{/course/addCourse(degreeId=${deg.id})}">Add Course</a>
+		<br>
+		<br>
+		<table border="1">
+			<tr>
+				<th>Course Name</th>
+			</tr>
+			<tr th:each="tempCourse : ${courses}">
+				<td th:text="${tempCourse.title}" />
+			</tr>
+	    </table>
+    </body>
+</html>

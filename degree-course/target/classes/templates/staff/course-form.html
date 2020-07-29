@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+    	<title>Save Course</title>
+    </head>
+    <body>
+		<h3>Add Course</h3>
+		<hr>
+		<form th:action="@{/course/save(degreeId=${degree.id})}" th:object="${course}" method="POST">
+			<input type="hidden" th:field="*{id}" />
+			<input type="text" th:field="*{title}" placeholder="Course Title">
+			<button type="submit">Save</button>
+		</form>	
+		<hr>
+		<a th:href="@{/course/showCoursesAdmin(degreeId=${degree.id})}">Back to Course List</a>
+    </body>
+</html>
